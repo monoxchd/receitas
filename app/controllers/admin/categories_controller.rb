@@ -1,4 +1,4 @@
-class Admin::CategoriesController < ApplicationController
+class Admin::CategoriesController < Admin::BaseController
   respond_to :html, :xml, :json
   # GET /admin/categories
   # GET /admin/categories.json

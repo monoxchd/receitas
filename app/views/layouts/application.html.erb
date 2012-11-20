@@ -7,6 +7,20 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+	<div id="container">
+		<div id="topbar">
+			<div id="search_bar">
+				<% # Content for the search bar %>
+			</div>
+			<div id="login_bar">
+				<% # Content for the login bar %>
+			</div>
+			<div id="menu">
+				<ul>
+					<% @categories.each do |category| %>
+						<li><%= category.name %></li>
+					<% end %>
+				</ul>
 
 <%= yield %>
 

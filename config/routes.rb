@@ -1,7 +1,14 @@
 Receitas::Application.routes.draw do
 
+  root :to => 'pages#index'
+
   resources :categories, only: [:index, :show] do
     resources :recipes, only: [:index, :show]
+  end
+
+  namespace :admin do
+    resources :categories
+    resources :recipes
   end
 
   # The priority is based upon order of creation:
@@ -44,15 +51,8 @@ Receitas::Application.routes.draw do
   #     end
   #   end
 
-  # Sample resource route within a namespace:
-  namespace :admin do
-    resources :categories
-    resources :recipes
-  end
-
   # You can have the root of your site routed with "root"
   # just remember to delete public/index.html.
-  root :to => 'categories#index'
 
   # See how all your routes lay out with "rake routes"
 

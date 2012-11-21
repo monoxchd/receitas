@@ -2,7 +2,7 @@
 <html>
 <head>
   <title>Receitas</title>
-  <%= stylesheet_link_tag    "admin", :media => "all" %>
+  <%= stylesheet_link_tag    "application", :media => "all" %>
   <%= javascript_include_tag :defaults %>
   <%= csrf_meta_tags %>
 </head>
@@ -13,12 +13,13 @@
 				<% # Include the search form here! %>
 			</div>
 			<div id="menubar_admin">
-				<% # Include the main link and new recipe link here %>
+				<%= link_to "New Category", new_admin_category_path %> | <%= link_to 'New Recipe', new_admin_recipe_path %>
 			</div>
 		</div>
 		<hr />
 
-<%= yield %>
+		<%= yield %>
 
+	</div>
 </body>
 </html>

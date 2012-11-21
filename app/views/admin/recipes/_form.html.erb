@@ -1,0 +1,37 @@
+<%= form_for [:admin, @recipe], :html => { :multipart => true } do |f| %>
+  <% if @recipe.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@category.errors.count, "error") %> prohibited this recipe from being saved:</h2>
+
+      <ul>
+      <% @recipe.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div id="form_container">
+    <dl>
+      <dt><%= f.label :category %></dt>
+      <dd><%= f.select :category_id, recipe_categories_collection %></dd>
+
+      <dt><%= f.label :name %></dt>
+      <dd><%= f.text_field :name, :placeholder => "Recipe Name" %></dd>
+
+      <dt><%= f.label :description %></dt>
+      <dd><%= f.text_field :description, :placeholder => "Recipe Description" %></dd>
+
+      <dt><%= f.label :ingredients %></dt>
+      <dd><%= f.text_area :ingredients, :placeholder => "Ingredients" %></dd>
+
+      <dt><%= f.label :how_to %></dt>
+      <dd><%= f.text_area :how_to, :placeholder => "How To" %></dd>
+
+      <dt>Imagem da receita</dt>
+      <dd><%= f.file_field :image %></dd>
+
+      <dd><%= f.submit %></dd>
+    </dl>
+  </div>
+<% end %>

@@ -1,3 +1,177 @@
-// Place all the styles related to the Pages controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+body
+{
+	background-image:url(/assets/background.gif);
+	background-repeat:repeat;
+}
+#container
+{
+	width:1000px;
+	margin:10px auto;
+}
+/* Header */
+#topbar
+{
+	background-image:url(/assets/topbackground.png);
+	width:1000px;
+	height:210px;
+	margin:0px auto;
+}
+#search_bar
+{
+	margin-top:20px;
+	margin-left:280px;
+	float:left;
+	width:250px;
+	height:60px;
+}
+#login_bar
+{
+	margin-top:20px;
+	margin-left:20px;
+	float:left;
+	width:400px;
+	height:60px;
+}
+#menu
+{
+	margin-top:10px;
+	margin-left:270px;
+	float:left;
+}
+#menu li
+{
+	background-image:url(/assets/button_large.gif);
+	background-repeat:no-repeat;
+	float:left;
+	height:20px;
+	width:150px;
+	display:inline;
+	text-align:center;
+	margin: 0 2px 3px 2px;
+}
+#menu a
+{
+	font-family:"Times New Roman", Times, serif;
+	font-size:16px;
+	color:#000000;
+	text-decoration:none;
+}
+#advertising
+{
+	width: 728px;
+	height: 90px;
+	margin: 10pt auto;
+	background-color:yellow;
+}
+/* Main Menu */
+#sampler
+{
+	background-image: url(/assets/sampler2.png);
+	width: 600px;
+	height: 300px;
+	margin: 0pt auto;
+}
+/* Recipes Menu */
+#recipes_display
+{
+	background-image:url(/assets/recipes_display.gif);
+	width:600px;
+	margin:10px auto;
+	padding-left:10px;
+	padding-bottom: 30px;
+}
+#recipes_display h1
+{
+	font-size:24px;
+}
+.recipes_background
+{
+	background-image:url(/assets/recipes_background.gif);
+	width:582px;
+	height:82px;
+	margin:5px 0px;
+}
+.recipes_image
+{
+	width:96px;
+	height:66px;
+	margin:8px 8px;
+	float: left;
+}
+.recipes_text
+{
+	margin:6px 0px 0px 0px;
+	width:400px;
+	height:50px;
+	float:left;
+}
+#recipes_ratings
+{
+	margin:0px 0px;
+	width: 85px;
+	height: 16px;
+	float:left;
+}
+#pagebar
+{
+	width:600px;
+	height:30px;
+}
+#pagebar a
+{
+	background-image:url(/assets/pages_button.gif);
+	width:25px;
+	height:21px;
+	text-align:center;
+	float:left;
+	display:inline;
+	margin:0px 2px;
+	padding-top:4px;
+	text-decoration:none;
+}
+/* Recipe Display */
+#display_image
+{
+	width:190px;
+	height:130px;
+	margin-right:20px;
+	float: right;
+}
+/* Sign Up Screen */
+#formulario_cadastro
+{
+	background-image:url(/assets/cadastro_formulario.gif);
+	width: 560px;
+	height: 450px;
+	float: left;
+	padding: 0px 20px;
+	text-align: center;
+}
+#formulario_cadastro h2
+{
+	color: red;
+	text-decoration: underline;
+}
+#formulario_cadastro p
+{
+	font-size: 12px;
+	font-weight: bolder;
+}
+#info_cadastro
+{
+	background-image:url(/assets/cadastro_info.gif);
+	width: 260px;
+	height: 450px;
+	float: right;
+	padding: 0px 10px;
+}
+#info_cadastro h3
+{
+	text-align: justify;
+}
+#info_cadastro ul li
+{
+	list-style-type: square;
+	font-size: 14px;
+	line-height: 40px;
+}

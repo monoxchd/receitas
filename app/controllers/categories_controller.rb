@@ -1,17 +1,18 @@
 class CategoriesController < ApplicationController
-respond_to :html
+	respond_to :html
 
 
-def index
-	@categories = Category.all
+	def index
+		@categories = Category.all
 
-	respond_with @categories
-end
+		respond_with @categories
+	end
 
-def show
-	@category = Category.find(params[:id])
+	def show
+		@categories = Category.all
+		@category = Category.find(params[:id])
 
-	respond_with @category
-end
+		respond_with @category
+	end
 
 end

@@ -18,11 +18,17 @@
 			<div id="menu">
 				<ul>
 					<% @categories.each do |category| %>
-						<li><%= category.name %></li>
+						<li><%= link_to category.name, category_path(category) %></li>
 					<% end %>
 				</ul>
+			</div>
+		</div>
+		<div id="advertising">
 
-<%= yield %>
+		</div>
 
+		<%= yield %>
+
+	</div>
 </body>
 </html>

@@ -1,0 +1,36 @@
+body
+{
+	background-image:url(/assets/background.gif);
+	background-repeat:repeat;
+}
+#container
+{
+	width:1000px;
+	margin:10px auto;
+}
+/* Admin */
+#topbar_admin
+{
+	width:1000px;
+	height:60px;
+}
+#searchbar_admin
+{
+	width:1000px;
+	text-align:right;
+}
+#menubar_admin
+{
+	width:1000px;
+	text-align:right;
+}
+#recipes_container
+{
+	margin:0px auto;
+	width:600px;
+}
+#form_container
+{
+	margin:0px auto;
+	width:600px;
+}

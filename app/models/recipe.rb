@@ -1,7 +1,11 @@
 class Recipe < ActiveRecord::Base
-  attr_accessible :description, :how_to, :ingredients, :name, :slug, :images
+	extend FriendlyId
+  friendly_id :name, use: :slugged
+  attr_accessible :description, :how_to, :ingredients, :name, :slug, :image, :category_id
   belongs_to :category
   validates_uniqueness_of :name, :slug
   validates_presence_of :description, :how_to, :ingredients, :name, :slug
-  has_attached_file :image, :styles => { :thumb => "96x66>"}
+  has_attached_file	:image, 
+  									:styles => { :small => "190x130>", :thumb => "96x66>"},
+  									:default_url => "/assets/no_image.gif"
 end

@@ -1,9 +1,9 @@
 Receitas::Application.routes.draw do
 
-  root :to => 'pages#index'
+  root :to => 'categories#index'
 
   resources :categories, only: [:index, :show] do
-    resources :recipes, only: [:index, :show]
+    resources :recipes, only: [:show]
   end
 
   namespace :admin do

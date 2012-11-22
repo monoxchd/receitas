@@ -4,7 +4,7 @@
 		<%= image_tag @recipe.image.url(:small) %>
 	</div>
 	<p><strong>Ingredientes:</strong></p>
-	<%= @recipe.ingredients %><br />
+	<%= simple_format(@recipe.ingredients) %><br />
 	<p><strong>Modo de Preparo:</strong></p>
-	<%= @recipe.how_to %><br />
+	<%= simple_format(@recipe.how_to) %><br />
 </div>

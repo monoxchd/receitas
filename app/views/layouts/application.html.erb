@@ -10,20 +10,20 @@
 	<div id="container">
 		<div id="topbar">
 			<div id="search_bar">
+				<%= render :partial => 'recipes/search' %>
 				<% # Content for the search bar %>
 			</div>
 			<div id="login_bar">
-				<p class="notice"><%= notice %></p>
-				<p class="alert"><%= alert %></p>
+				<span class="notice"><%= notice %></span>
+				<span class="alert"><%= alert %></span>
 				<% if user_signed_in? %>
 				<% else %>
-					<%= # render partial:'devise/sessions/new', locals:{resource: resource} %>
+					<%= render 'devise/sessions/new' %>
 				<% end %>
-				<% # Content for the login bar %>
 			</div>
 			<div id="menu">
 				<ul>
-					<% @categories.each do |category| %>
+					<% menu.each do |category| %>
 						<li><%= link_to category.name, category_path(category) %></li>
 					<% end %>
 				</ul>

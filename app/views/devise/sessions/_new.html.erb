@@ -2,13 +2,13 @@
   <table id="login_panel" width="400" cellspacing="0" cellpadding="0" border="0">
   	<tbody>
   		<tr>
-  			<td width="160"><%= f.label :email %></td>
-  			<td width="160"><%= f.label :password %></td>
-  			<td width="80">&nbsp;</td>
+  			<td width="170"><%= f.label :email %></td>
+  			<td width="170"><%= f.label :password %></td>
+  			<td width="60">&nbsp;</td>
   		</tr>
   		<tr>
-  			<td><%= f.email_field :email %></td>
-  			<td><%= f.password_field :password %></td>
+  			<td><%= f.email_field(:email, :size => 22) %></td>
+  			<td><%= f.password_field(:password, :size => 22) %></td>
   			<td><%= f.submit "Sign in" %></td>
   		</tr>
   		<tr>

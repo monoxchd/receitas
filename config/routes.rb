@@ -4,6 +4,8 @@ Receitas::Application.routes.draw do
 
   root :to => 'categories#index'
 
+  match 'search' => 'recipes#search'
+
   resources :categories, only: [:index, :show] do
     resources :recipes, only: [:show]
   end

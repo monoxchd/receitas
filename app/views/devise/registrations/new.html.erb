@@ -1,18 +1,38 @@
-<h2>Sign up</h2>
+<div id="formulario_cadastro">
+	<h3>Preencha todas as informações abaixo para se cadastrar no site.</h3>
 
-<%= form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f| %>
-  <%= devise_error_messages! %>
+	<%= form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f| %>
+	  <%= devise_error_messages! %>
 
-  <div><%= f.label :email %><br />
-  <%= f.email_field :email %></div>
+	  <p><%= f.label :name %></p>
+	  <%= f.text_field :name %>
 
-  <div><%= f.label :password %><br />
-  <%= f.password_field :password %></div>
+	  <p><%= f.label :last_name %></p>
+	  <%= f.text_field :last_name %>
 
-  <div><%= f.label :password_confirmation %><br />
-  <%= f.password_field :password_confirmation %></div>
+	  <p><%= f.label :login %></p>
+	  <%= f.text_field :login %>
 
-  <div><%= f.submit "Sign up" %></div>
-<% end %>
+	  <p><%= f.label :email %></p>
+	  <%= f.email_field :email %>
 
-<%= render "devise/shared/links" %>
+	  <p><%= f.label :password %></p>
+	  <%= f.password_field :password %>
+
+	  <p><%= f.label :password_confirmation %></p>
+	  <%= f.password_field :password_confirmation %>
+
+	  <p><%= f.submit "Sign up" %></p>
+	<% end %>
+</div>
+<div id="info_cadastro">
+	<h3>Agradecemos o seu interesse em se cadastrar em nosso site. Por enquanto estamos em construção e não possuímos todos os recursos disponíveis, mas logo você poderá:</h3>
+	<ul>
+		<li>Ter um Livro de Receitas</li>
+		<li>Enviar as suas próprias receitas</li>
+		<li>Concorrer a prêmios</li>
+		<li>Ganhar medalhas e reputação</li>
+		<li>Criar o seu perfil</li>
+		<li>E muito mais...</li>
+	</ul>
+</div>

@@ -13,6 +13,12 @@
 				<% # Content for the search bar %>
 			</div>
 			<div id="login_bar">
+				<p class="notice"><%= notice %></p>
+				<p class="alert"><%= alert %></p>
+				<% if user_signed_in? %>
+				<% else %>
+					<%= # render partial:'devise/sessions/new', locals:{resource: resource} %>
+				<% end %>
 				<% # Content for the login bar %>
 			</div>
 			<div id="menu">

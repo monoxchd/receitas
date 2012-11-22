@@ -17,6 +17,9 @@
 				<span class="notice"><%= notice %></span>
 				<span class="alert"><%= alert %></span>
 				<% if user_signed_in? %>
+					<span>Seja bem-vindo, <%= current_user.login %>!</span><br />
+					<span>Acessar área do usuário</span><br />
+					<%= link_to "Sign out", destroy_user_session_path,:method => :delete %>
 				<% else %>
 					<%= render 'devise/sessions/new' %>
 				<% end %>

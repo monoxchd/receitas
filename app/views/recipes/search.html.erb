@@ -1,5 +1,5 @@
 <div id="recipes_display">
-	<h1>Busca de receitas com "<%= %>"</h1>
+	<h1>Busca de receitas por "<%= @search %>"</h1>
 	<p>Veja a lista de todas as receitas:</p>
 	<% @recipes.each do |recipe| %>
 		<div class="recipes_background">
@@ -7,7 +7,7 @@
 				<%= image_tag recipe.image.url(:thumb) %>
 			</div>
 			<div class="recipes_text">
-				<%= link_to recipe.name, category_recipe_path(recipe) %><br />
+				<%= link_to recipe.name, category_recipe_path(recipe.category_id, recipe) %><br />
 				<%= recipe.description %>
 			</div>
 		</div>

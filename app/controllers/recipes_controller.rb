@@ -10,6 +10,7 @@ class RecipesController < ApplicationController
 
 	def search
 		@recipes = Recipe.search params[:search]
+		@search = params[:search]
 
 		respond_with @recipes
 	end

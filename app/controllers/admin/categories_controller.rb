@@ -1,4 +1,5 @@
 class Admin::CategoriesController < Admin::BaseController
+  http_basic_authenticate_with :name => "admin", :password => "admin"
   respond_to :html, :xml, :json
   # GET /admin/categories
   # GET /admin/categories.json

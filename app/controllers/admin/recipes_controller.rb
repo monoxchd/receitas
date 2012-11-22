@@ -1,5 +1,6 @@
 class Admin::RecipesController < Admin::BaseController
-	  respond_to :html, :xml, :json
+	  http_basic_authenticate_with :name => "admin", :password => "admin"
+    respond_to :html, :xml, :json
   # GET /admin/categories
   # GET /admin/categories.json
   def index

@@ -1,5 +1,5 @@
 <span>Procurar:</span>
-<%= form_tag :controller => 'recipes', :action => 'search', :method => 'get' do %>
+<%= form_tag recipe_search_path do %>
 	<%= text_field_tag(:search, params[:search], :id => 'search_field', :size => 22) %>
 	<%= submit_tag "Search", :name => nil %>
 <% end %>

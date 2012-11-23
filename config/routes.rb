@@ -4,7 +4,11 @@ Receitas::Application.routes.draw do
 
   root :to => 'categories#index'
 
+<<<<<<< HEAD
   get 'search' => 'recipes#search'
+=======
+  match 'search' => 'recipes#search', as: :recipe_search
+>>>>>>> ef3db616d2c0e689077cca65323062caf5238a7b
 
   resources :categories, only: [:index, :show] do
     resources :recipes, only: [:show]

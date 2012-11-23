@@ -1,5 +1,9 @@
 <span>Procurar:</span>
+<<<<<<< HEAD
 <%= form_tag :controller => 'recipes', :action => 'search', :html => {:method => 'get'} do %>
+=======
+<%= form_tag recipe_search_path do %>
+>>>>>>> ef3db616d2c0e689077cca65323062caf5238a7b
 	<%= text_field_tag(:search, params[:search], :id => 'search_field', :size => 22) %>
 	<%= submit_tag "Search", :name => nil %>
 <% end %>

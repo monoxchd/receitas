@@ -4,11 +4,10 @@ Receitas::Application.routes.draw do
 
   root :to => 'categories#index'
 
-  match 'search' => 'recipes#search', as: :recipe_search
+  match 'busca/(:query)' => 'recipes#search', as: :recipe_search
+  get 'categorias/:category_id/:id' => 'recipes#show', as: :recipe
 
-  resources :categories, only: [:index, :show] do
-    resources :recipes, only: [:show]
-  end
+  resources :categories, only: [:index, :show], path: 'categorias'
 
   namespace :admin do
     resources :categories

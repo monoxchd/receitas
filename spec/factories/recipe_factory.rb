@@ -1,12 +1,11 @@
-require 'factory_girl'
-require 'ffaker'
+require 'spec_helper'
 
-FactoryGirl.define do 
+FactoryGirl.define do
 	factory :recipe do
-		name { Faker::Name.name }
-		description {Faker::Lorem.words(5)}
-		ingredients {Faker::Lorem.paragraphs(3)}
-		how_to {Faker::Lorem.paragraphs(3)}
-
-	
+    category
+		description { Faker::Lorem.words(5) }
+		ingredients { Faker::Lorem.paragraphs(3) }
+    name { Faker::Name.name }
+		how_to { Faker::Lorem.paragraphs(3) }
+  end
 end

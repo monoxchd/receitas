@@ -29,4 +29,5 @@ group :test do
   gem 'rb-fsevent', '0.9.1'
   gem 'factory_girl', '4.1.0'
   gem 'ffaker', '1.15.0'
+  gem 'rb-inotify', '0.8.8'
 end

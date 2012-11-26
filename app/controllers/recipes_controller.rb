@@ -1,6 +1,5 @@
 class RecipesController < ApplicationController
 	def show
-		@categories = Category.all
 		@recipe = Recipe.find(params[:id])
 	end
 

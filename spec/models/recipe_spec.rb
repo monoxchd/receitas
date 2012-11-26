@@ -17,8 +17,7 @@ describe 'Recipe' do
 	end
 
 	it 'must have a description' do
-		pending
-		recipe = FactoryGirl.build(:recipe, description: nil)
+		FactoryGirl.build(:recipe, description: nil).should_not be_valid
 	end
 
 	it 'must have a category' do
@@ -26,21 +25,21 @@ describe 'Recipe' do
 	end
 
 	it 'must have an ingredients section filled' do
-		pending
-		recipe = FactoryGirl.build(:recipe, ingredients: nil)
+		FactoryGirl.build(:recipe, ingredients: nil).should_not be_valid
 	end
 
 	it 'must have a how to section filled' do
-		pending
-		recipe = FactoryGirl.build(:recipe, how_to: nil)
+		FactoryGirl.build(:recipe, how_to: nil).should_not be_valid
 	end
 
 	it 'must have a slug' do
-		pending
-		recipe = FactoryGirl.build(:recipe, slug: nil)
+		recipe = FactoryGirl.create(:recipe, slug: nil)
+		recipe.slug.should_not be_empty
 	end
 
 	it 'must have a treated slug with the same description as name' do
+		recipe = FactoryGirl.create(:recipe, name: 'Testing Slug Attribute')
+		recipe.slug.should == "testing-slug-attribute"
 	end
 
 end

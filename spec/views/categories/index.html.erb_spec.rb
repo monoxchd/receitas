@@ -6,7 +6,7 @@ describe 'categories/index.html.erb' do
     @second_category = FactoryGirl.create(:category)
 
     render
-    pending
-    # rendered.should include(@category.name)
+
+    rendered.should include('<div id="sampler">')
   end
 end

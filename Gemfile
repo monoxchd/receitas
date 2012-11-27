@@ -5,6 +5,8 @@ gem 'execjs',	'~> 1.4.0'
 
 gem 'sqlite3'
 gem 'jquery-rails'
+gem 'haml', '3.1.6'
+gem 'passenger', '3.0.13'
 
 # Gems used only for assets and not required
 # in production environments by default.

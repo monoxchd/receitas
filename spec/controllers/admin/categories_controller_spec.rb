@@ -63,7 +63,7 @@ describe Admin::CategoriesController do
       end
     end
     context 'with invalid attributes' do
-      it 'does not save the new category in the database' do
+      it 'does not save the new invalid category in the database' do
         post :create, category: FactoryGirl.attributes_for(:invalid_category)
         assigns(:category).should_not be_valid
       end
@@ -71,6 +71,50 @@ describe Admin::CategoriesController do
         post :create, category: FactoryGirl.attributes_for(:invalid_category)
         response.should render_template :new
       end
+    end
+  end
+
+  describe 'PUT #update' do
+    context 'with valid attributes' do
+      it 'assigns the requested category to @category' do
+        put :update, id: @category.id
+        assigns(:category).should == @category
+      end
+      it 'saves the new attributes from category on the existing category' do
+        put :update, id: @category.id, category: FactoryGirl.attributes_for(:category, name: "Frutos do Mar")
+        @category.reload
+        @category.name.should == "Frutos do Mar"
+      end
+      it 'redirects to the index page' do
+        put :update, id: @category.id, category: FactoryGirl.attributes_for(:category)
+        response.should redirect_to(admin_categories_path)
+      end
+    end
+    context 'with invalid attributes' do
+      it 'assigns the requested category to @category' do
+        put :update, id: @category.id
+        assigns(:category).should == @category
+      end
+      it 'saves the new attributes from category on the existing category' do
+        put :update, id: @category.id, category: FactoryGirl.attributes_for(:invalid_category)
+        @category.reload
+        @category.name.should == @category.name
+      end
+      it 're-renders the edit page' do
+        put :update, id: @category.id, category: FactoryGirl.attributes_for(:invalid_category)
+        response.should render_template :edit
+      end
+    end
+  end
+
+  describe 'DELETE #destroy' do
+    it 'deletes the selected category' do
+      delete :destroy, id: @category.id
+      Category.exists?(@category.id).should be_false
+    end
+    it 'redirects to the index page' do
+      delete :destroy, id: @category.id
+      response.should redirect_to(admin_categories_path)
     end
   end
 end

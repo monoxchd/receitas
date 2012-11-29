@@ -42,6 +42,6 @@ class Admin::CategoriesController < Admin::BaseController
     @category = Category.find(params[:id])
     @category.destroy
 
-    respond_with @category, :location => admin_categories_path
+    redirect_to admin_categories_path
   end
 end

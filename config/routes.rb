@@ -11,7 +11,7 @@ Receitas::Application.routes.draw do
 
   namespace :admin do
     resources :categories
-    resources :recipes
+    resources :recipes, except: [:show]
   end
 
   # The priority is based upon order of creation:

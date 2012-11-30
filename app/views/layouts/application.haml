@@ -1,0 +1,31 @@
+!!!
+%html
+  %head
+    %title= @title
+    = stylesheet_link_tag    "application", :media => "all"
+    = javascript_include_tag "application"
+    = csrf_meta_tags
+  %body
+    #container
+      #topbar
+        #search_bar
+          = render :partial => 'recipes/search'
+          -# Content for the search bar
+        #login_bar
+          .notice= notice
+          .alert= alert
+          - if user_signed_in?
+            %span= "Seja bem-vindo, #{current_user.login}"
+            %br
+            %span Acessar área do usuário
+            %br
+            = link_to "Sign out", destroy_user_session_path,:method => :delete
+          - else
+            = render 'devise/sessions/new'
+        #menu
+          %ul
+            - menu.each do |category|
+              %li= link_to category.name, category_path(category), :id => category.name
+      #advertising
+
+      = yield

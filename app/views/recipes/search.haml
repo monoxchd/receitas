@@ -1,0 +1,15 @@
+#recipes_display
+	%h1= "Busca de receitas por \"#{params[:query]}\""
+
+	- if params[:query].present?
+		%p Veja a lista de todas as receitas:
+		- @recipes.each do |recipe|
+			.recipes_background
+				.recipes_image
+					= image_tag recipe.image.url(:thumb)
+				.recipes_text
+					= link_to recipe.name, recipe_path(recipe.category, recipe)
+					%br
+					= recipe.description
+	- else
+		%p Digite alguma coisa!

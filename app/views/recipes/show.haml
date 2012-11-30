@@ -1,0 +1,12 @@
+#recipes_display
+  %h1= @recipe.name
+  #display_image
+    = image_tag @recipe.image.url(:small)
+  %p
+    %strong Ingredientes:
+  = simple_format(@recipe.ingredients)
+  %br
+  %p
+    %strong Modo de Preparo:
+  = simple_format(@recipe.how_to)
+  %br

@@ -1,7 +1,12 @@
 #recipes_display
 	%h1= "Receitas de #{@category.name}"
 	%p Veja a lista de todas as receitas:
-	- @category.recipes.each do |recipe|
+	%p
+		Escolha o seu critério de organização:
+		= link_to "Mais Recentes", category_path(@category)
+		= link_to "Mais Visualizadas", category_most_viewed_path(@category)
+		= link_to "Mais Votadas"
+	- @recipes.each do |recipe|
 		.recipes_background
 			.recipes_image
 				= image_tag recipe.image.url(:thumb)

@@ -5,6 +5,7 @@ Receitas::Application.routes.draw do
   root :to => 'categories#index'
 
   match 'busca/(:query)' => 'recipes#search', as: :recipe_search
+  get 'categorias/:id/mais-visualizadas' => 'categories#viewed', as: :category_most_viewed
   get 'categorias/:category_id/:id' => 'recipes#show', as: :recipe
 
   resources :categories, only: [:index, :show], path: 'categorias'

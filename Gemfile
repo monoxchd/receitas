@@ -16,9 +16,9 @@ group :assets do
   gem 'friendly_id',	'~> 4.0.9'
   gem 'paperclip',		'~> 3.3.1'
   gem 'devise',				'~> 2.1.2'
-
-  gem 'therubyracer', platforms: :ruby
-  gem 'uglifier', '>= 1.0.3'
+  gem 'compass-rails','~> 1.0.3'
+  gem 'ajaxful_rating', '~> 2.2.9.1'
+  gem 'uglifier',     '>= 1.0.3'
 end
 
 gem 'rspec-rails', '2.12.0', group: [:test, :development]

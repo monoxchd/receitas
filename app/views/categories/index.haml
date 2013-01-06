@@ -1,15 +1,56 @@
-#sampler
-  .recipe_sampler_name_holder
-    .recipe_sampler_name
-      %strong= @recipes_most_recent[0].name
-      %br
-      = @recipes_most_recent[0].description
-    .recipe_sampler_name
-      %strong= @recipes_most_recent[1].name
-      %br
-      = @recipes_most_recent[1].description
-    .recipe_sampler_name
-      %strong= @recipes_most_recent[2].name
-      %br
-      = @recipes_most_recent[2].description
-  .recipe_sampler_image
+#sampler_holder
+  #sampler
+    .recipe_sampler_name_holder
+      .recipe_sampler_name
+        .recipe_sampler.recipe_sampler_most_recent#most_recent_1
+          %strong= @recipes_most_recent[0].name
+          %br
+          = @recipes_most_recent[0].description
+        .recipe_sampler.recipe_sampler_most_viewed#most_viewed_1
+          %strong= @recipes_most_viewed[0].name
+          %br
+          = @recipes_most_viewed[0].description
+      .recipe_sampler_name
+        .recipe_sampler.recipe_sampler_most_recent#most_recent_2
+          %strong= @recipes_most_recent[1].name
+          %br
+          = @recipes_most_recent[1].description
+        .recipe_sampler.recipe_sampler_most_viewed#most_viewed_2
+          %strong= @recipes_most_viewed[1].name
+          %br
+          = @recipes_most_viewed[1].description
+      .recipe_sampler_name
+        .recipe_sampler.recipe_sampler_most_recent#most_recent_3
+          %strong= @recipes_most_recent[2].name
+          %br
+          = @recipes_most_recent[2].description
+        .recipe_sampler.recipe_sampler_most_viewed#most_viewed_3
+          %strong= @recipes_most_viewed[2].name
+          %br
+          = @recipes_most_viewed[2].description
+    .recipe_sampler_image
+      .recipe_sampler_image_display#most_recent_image_1
+        = image_tag @recipes_most_recent[0].image.url(:medium)
+      .recipe_sampler_image_display#most_recent_image_2
+        = image_tag @recipes_most_recent[1].image.url(:medium)
+      .recipe_sampler_image_display#most_recent_image_3
+        = image_tag @recipes_most_recent[2].image.url(:medium)
+      .recipe_sampler_image_display#most_viewed_image_1
+        = image_tag @recipes_most_viewed[0].image.url(:medium)
+      .recipe_sampler_image_display#most_viewed_image_2
+        = image_tag @recipes_most_viewed[1].image.url(:medium)
+      .recipe_sampler_image_display#most_viewed_image_3
+        = image_tag @recipes_most_viewed[2].image.url(:medium)
+  #sampler_nav
+    Escolha o seu critério de organização:
+    #down_arrow
+    #nav_text
+      %a.most_recent_link{ href: '#mais-recentes' } Mais Recentes
+      |
+      %a.most_viewed_link{ href: '#mais-visualizadas' } Mais Visualizadas
+      |
+      %a.most_voted_link{ href: '#mais-votadas' } Mais Votadas
+
+- content_for :javascript do
+  :javascript
+    new Sampler()

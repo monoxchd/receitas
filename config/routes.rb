@@ -9,6 +9,9 @@ Receitas::Application.routes.draw do
   get 'categorias/:category_id/:id' => 'recipes#show', as: :recipe
 
   resources :categories, only: [:index, :show], path: 'categorias'
+  resources :recipes do
+    post :rate, :on => :member
+  end
 
   namespace :admin do
     resources :categories

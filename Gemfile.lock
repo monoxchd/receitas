@@ -193,7 +193,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  ajaxful_rating (= 3.0.0.beta8)
+  ajaxful_rating (~> 3.0.0.beta8)
   capybara (= 2.0.1)
   coffee-rails (~> 3.2.1)
   compass-rails (~> 1.0.3)

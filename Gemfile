@@ -7,7 +7,6 @@ gem 'sqlite3'
 gem 'jquery-rails'
 gem 'haml', '3.1.6'
 gem 'passenger', '3.0.13'
-gem 'rake', '~> 10.0.2'
 
 # Gems used only for assets and not required
 # in production environments by default.
@@ -18,7 +17,7 @@ group :assets do
   gem 'paperclip',		'~> 3.3.1'
   gem 'devise',				'~> 2.1.2'
   gem 'compass-rails','~> 1.0.3'
-  gem 'ajaxful_rating', '3.0.0.beta8'
+  gem 'ajaxful_rating', '~> 3.0.0.beta8'
   gem 'uglifier',     '>= 1.0.3'
   gem 'sass',         '~> 3.2.3'
 end

@@ -2,6 +2,7 @@ class Recipe < ActiveRecord::Base
 	extend FriendlyId
 
   # attributes
+  ajaxful_rateable :stars => 5
   friendly_id :name, use: :slugged
   attr_accessible :description, :how_to, :ingredients, :name, :slug, :image, :category_id
   has_attached_file :image,

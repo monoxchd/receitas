@@ -17,7 +17,7 @@ group :assets do
   gem 'paperclip',		'~> 3.3.1'
   gem 'devise',				'~> 2.1.2'
   gem 'compass-rails','~> 1.0.3'
-  gem 'ajaxful_rating', '~> 2.2.9.1'
+  gem 'ajaxful_rating', '~> 3.0.0.beta8'
   gem 'uglifier',     '>= 1.0.3'
 end
 

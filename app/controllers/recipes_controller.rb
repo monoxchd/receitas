@@ -1,6 +1,9 @@
 class RecipesController < ApplicationController
   def show
+    @category = Category.find(params[:category_id])
+    @comment = Comment.new
     @recipe = Recipe.find(params[:id])
+    @comments = @recipe.comments
     @recipe.views += 1
     @recipe.save
   end
@@ -8,7 +11,6 @@ class RecipesController < ApplicationController
   def rate
     @recipe = Recipe.find(params[:id])
     @recipe.rate(params[:stars], current_user)
-    redirect_to(root_path)
   end
 
   def search

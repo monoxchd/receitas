@@ -20,6 +20,17 @@ ActiveRecord::Schema.define(:version => 20130128011541333) do
     t.datetime "updated_at", :null => false
   end
 
+  create_table "comments", :force => true do |t|
+    t.text     "body"
+    t.integer  "recipe_id"
+    t.integer  "user_id"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  add_index "comments", ["recipe_id"], :name => "index_comments_on_recipe_id"
+  add_index "comments", ["user_id"], :name => "index_comments_on_user_id"
+
   create_table "rates", :force => true do |t|
     t.integer  "rater_id"
     t.integer  "rateable_id"
@@ -65,6 +76,10 @@ ActiveRecord::Schema.define(:version => 20130128011541333) do
     t.string   "name"
     t.string   "last_name"
     t.string   "login"
+    t.string   "avatar_file_name"
+    t.string   "avatar_content_type"
+    t.integer  "avatar_file_size"
+    t.datetime "avatar_updated_at"
   end
 
   add_index "users", ["email"], :name => "index_users_on_email", :unique => true

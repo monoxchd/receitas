@@ -1,0 +1,5 @@
+= form_for [@category, @recipe, @comment] do |f|
+  = f.label :body, 'Comentário:'
+  = f.text_area :body, rows: 10, cols: 70
+  = f.hidden_field :recipe_id, value: @recipe.id
+  = f.submit 'Enviar comentário'

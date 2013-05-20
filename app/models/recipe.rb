@@ -6,11 +6,12 @@ class Recipe < ActiveRecord::Base
   friendly_id :name, use: :slugged
   attr_accessible :description, :how_to, :ingredients, :name, :slug, :image, :category_id
   has_attached_file :image,
-    styles: { medium: '380x260>', small: '190x130>', thumb: '96x66>' },
+    styles: { big: '640x400>', medium: '160x105>', thumb: '96x66>' },
     default_url: '/assets/no_image_:style.gif'
 
   # associations
   belongs_to :category
+  has_many :comments
 
   # validations
   validates_uniqueness_of :name, :slug

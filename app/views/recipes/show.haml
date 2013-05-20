@@ -10,4 +10,27 @@
     %strong Modo de Preparo:
   = simple_format(@recipe.how_to)
   %br
-  = ratings_for @recipe
+  #comments_form
+    %p
+      %strong Dê a sua nota para essa receita:
+    = ratings_for @recipe
+    - if current_user
+      = flash_message
+      %p
+        %strong Deixe o seu comentário:
+      = render partial: 'comments_form'
+    - else
+      %p
+        %strong Registre-se no site para deixar um comentário
+    %p
+      %strong Veja abaixo todos os comentários para essa receita:
+    - if @comments.empty?
+      %p Essa receita ainda não possui nenhum comentário. Seja o primeiro a comentar!
+    - else
+      - @comments.each do |comment|
+        .comment
+          .avatar
+            = image_tag(comment.user.avatar(:thumb))
+          .text
+            = comment.body
+            = comment.created_at

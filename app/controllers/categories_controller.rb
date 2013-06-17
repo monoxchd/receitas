@@ -1,7 +1,7 @@
 class CategoriesController < ApplicationController
 	def index
-    @recipes_most_recent = Recipe.order("created_at DESC").limit(3)
-    @recipes_most_viewed = Recipe.order("views DESC").limit(3)
+    @recipe_highlights = Recipe.have_image.order_by_rate.limit(6)
+    @recipe_recents = Recipe.order_by_created_at.limit(4)
 	end
 
 	def show

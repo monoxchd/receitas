@@ -55,9 +55,10 @@ ActiveRecord::Schema.define(:version => 20130128011541333) do
     t.integer  "image_file_size"
     t.datetime "image_updated_at"
     t.integer  "category_id"
-    t.datetime "created_at",                        :null => false
-    t.datetime "updated_at",                        :null => false
-    t.integer  "views",              :default => 0
+    t.datetime "created_at",                                                        :null => false
+    t.datetime "updated_at",                                                        :null => false
+    t.integer  "views",                                            :default => 0
+    t.decimal  "rating_average",     :precision => 6, :scale => 2, :default => 0.0
   end
 
   create_table "users", :force => true do |t|

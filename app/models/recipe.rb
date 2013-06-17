@@ -21,4 +21,7 @@ class Recipe < ActiveRecord::Base
   scope :search, lambda { |query|
     where("name LIKE '%#{ query }%' OR description LIKE '%#{ query }%'")
   }
+  scope :have_image, where('image_file_name IS NOT NULL')
+  scope :order_by_rate, order: 'rating_average DESC'
+  scope :order_by_created_at, order: 'created_at DESC'
 end

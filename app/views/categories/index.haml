@@ -3,34 +3,23 @@
 %h2#carousel_title Top Receitas Dona Gege
 
 %ul#carousel
-  %li
-    = link_to image_tag('slider.jpg', size: '640x400'), root_path
-    %p
-      %strong.title This is a title
-      %br
-      This is a subtitle
-      %br
-      This is the ratings
-
-  %li= image_tag('slider.jpg', size: '640x400')
-  %li= image_tag('slider.jpg', size: '640x400')
-  %li= image_tag('slider.jpg', size: '640x400')
-  %li= image_tag('slider.jpg', size: '640x400')
-  %li= image_tag('slider.jpg', size: '640x400')
+  - @recipe_highlights.each do |highlight|
+    %li
+      = link_to image_tag(highlight.image.url(:big), size: '640x400'), root_path
+      %p
+        %strong.title= highlight.name
+        %br
+        = highlight.description
+        %br
+        = image_tag('img2.jpg', size: '160x105')
 
 #last_recipes_section
   %h3#last_recipes_title Últimas Receitas
 
   %ul#last_recipes
-
-    %li
-      = image_tag('img2.jpg', size: '160x105')
-    %li
-      = image_tag('img3.jpg', size: '160x105')
-    %li
-      = image_tag('img4.jpg', size: '160x105')
-    %li.last
-      = image_tag('img5.jpg', size: '160x105')
+    - @recipe_recents.each do |recent|
+      %li
+        = image_tag(recent.image.url(:medium), size: '160x105')
 
 
 - content_for :javascript do
